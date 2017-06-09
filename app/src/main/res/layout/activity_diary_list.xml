@@ -1,0 +1,35 @@
+<!--
+  ~ Created by wingjay on 11/16/16 3:31 PM
+  ~ Copyright (c) 2016.  All rights reserved.
+  ~
+  ~ Last modified 11/10/16 11:05 AM
+  ~
+  ~ Reach me: https://github.com/wingjay
+  ~ Email: yinjiesh@126.com
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/diary_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <com.wingjay.jianshi.ui.widget.TextPointView
+        android:id="@+id/view_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        app:text="@string/write"/>
+
+
+</RelativeLayout>
+
+

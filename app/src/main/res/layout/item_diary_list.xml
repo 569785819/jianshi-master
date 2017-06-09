@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:id="@+id/diary_content"
+        style="@style/PressableBg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.wingjay.jianshi.ui.widget.VerticalTextView
+            android:id="@+id/diary_title_date"
+            android:layout_width="wrap_content"
+            android:layout_height="155dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="60dp"
+            android:textColor="@android:color/black"
+            tools:text="九月十二日 " />
+
+        <com.wingjay.jianshi.ui.widget.VerticalTextView
+            android:id="@+id/diary_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/black"
+            tools:text="水调歌头·中秋" />
+    </LinearLayout>
+
+
+    <com.zzj.jianshi.widget.VerticalTitleTextView
+        android:id="@+id/year"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/diary_title"
+        android:gravity="center_horizontal"
+        android:paddingEnd="5dp"
+        android:paddingTop="35dp"
+        android:textColor="@android:color/black"
+        app:verticalTextSize="22sp"
+        tools:ignore="RtlHardcoded"
+        tools:text="二零一六年 丙申" />
+
+</LinearLayout>

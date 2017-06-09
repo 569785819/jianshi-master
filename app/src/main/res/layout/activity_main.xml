@@ -1,0 +1,147 @@
+<!--
+  ~ Created by wingjay on 11/16/16 3:31 PM
+  ~ Copyright (c) 2016.  All rights reserved.
+  ~
+  ~ Last modified 11/10/16 11:05 AM
+  ~
+  ~ Reach me: https://github.com/wingjay
+  ~ Email: yinjiesh@126.com
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#808080"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#aaffffff" />
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_container"
+        style="@style/NormalBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="@dimen/contain_red_circle_size"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <com.wingjay.jianshi.ui.widget.TextPointView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/margin_18"
+                app:text="@string/setting" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/contain_red_circle_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <ScrollView
+                android:id="@+id/right_top_bar"
+                android:layout_width="@dimen/contain_red_circle_size"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.wingjay.jianshi.ui.widget.VerticalTextView
+                        android:id="@+id/year"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal" />
+
+                    <com.wingjay.jianshi.ui.widget.VerticalTextView
+                        android:id="@+id/month"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal" />
+
+                    <com.wingjay.jianshi.ui.widget.VerticalTextView
+                        android:id="@+id/day"
+                        style="@style/TextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/bright_red" />
+
+                    <com.wingjay.jianshi.ui.widget.TextPointView
+                        android:id="@+id/writer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/margin_18"
+                        app:text="@string/write" />
+
+                    <com.wingjay.jianshi.ui.widget.TextPointView
+                        android:id="@+id/reader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/margin_18"
+                        app:text="@string/read" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/contain_red_circle_size"
+            android:layout_marginLeft="@dimen/contain_red_circle_size"
+            android:layout_marginRight="@dimen/contain_red_circle_size"
+            android:layout_marginStart="@dimen/contain_red_circle_size">
+
+            <com.wingjay.jianshi.ui.widget.DayChooser
+                android:id="@+id/day_chooser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <com.wingjay.jianshi.ui.widget.ThreeLinePoemView
+                android:id="@+id/three_line_poem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

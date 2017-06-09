@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by wingjay on 11/16/16 3:31 PM
+  ~ Copyright (c) 2016.  All rights reserved.
+  ~
+  ~ Last modified 11/10/16 11:05 AM
+  ~
+  ~ Reach me: https://github.com/wingjay
+  ~ Email: yinjiesh@126.com
+  -->
+
+<resources>
+    <declare-styleable name="TextPointView">
+        <attr name="text" format="string"/>
+        <attr name="redPointViewBgColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="MultipleRowTextView">
+        <attr name="multiRowTextSize" format="dimension"/>
+        <attr name="multiRowTextBold" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="VerticalTextView">
+        <attr name="verticalTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>

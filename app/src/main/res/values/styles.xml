@@ -1,0 +1,159 @@
+<!--
+  ~ Created by wingjay on 11/16/16 3:31 PM
+  ~ Copyright (c) 2016.  All rights reserved.
+  ~
+  ~ Last modified 11/10/16 11:05 AM
+  ~
+  ~ Reach me: https://github.com/wingjay
+  ~ Email: yinjiesh@126.com
+  -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskCloseEnterAnimation">@null</item>
+        <item name="android:taskCloseExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToFrontExitAnimation">@null</item>
+        <item name="android:taskToBackEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/text_bg</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="ClickableTextStyle" parent="TextStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="DayChooserTextStyle" parent="TextStyle">
+        <item name="android:textColor">@color/link_text</item>
+        <item name="android:textSize">@dimen/huge_text_size</item>
+    </style>
+
+    <style name="DayChooserUnitStyle" parent="TextStyle">
+        <item name="android:textSize">@dimen/huge_text_size</item>
+    </style>
+
+    <style name="ThreeLinePoemTextStyle" parent="TextStyle">
+        <item name="android:textColor">@color/text_bg</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="EditTextStyle" parent="TextStyle">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="EditTextTitleStyle" parent="EditTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/huge_text_size</item>
+    </style>
+
+    <style name="EditTextContentStyle" parent="EditTextStyle">
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+
+    <style name="VerticalTextContentStyle">
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="DiaryListTitleStyle" parent="LeftRightPadding">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_bg</item>
+        <item name="android:textSize">@dimen/huge_text_size</item>
+    </style>
+
+    <style name="DiaryListContentStyle" parent="LeftRightPadding">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/text_bg</item>
+        <item name="android:lineSpacingExtra">1dp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="DiaryListDateStyle" parent="DiaryListContentStyle">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="WriterTextStyle">
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="NormalBg" parent="NormalBgColor">
+        <item name="android:padding">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="NormalBgColor">
+        <item name="android:background">@color/normal_bg</item>
+    </style>
+
+    <style name="NormalBgLeftRightPadding" parent="NormalBgColor">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="NormalBgLeftRightPaddingWithoutColor">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="NormalBgTopDownPadding" parent="NormalBgColor">
+        <item name="android:paddingTop">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="LeftRightPadding">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="PressableBg">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="SignupTextView" parent="PressableBg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/margin_16</item>
+        <item name="android:gravity">end|right</item>
+        <item name="android:textColor">@color/black_4a</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="SignupEditText">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">end|right</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_4a</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>

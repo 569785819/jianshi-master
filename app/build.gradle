@@ -1,0 +1,145 @@
+import com.app.plugin.AspectjPlugin
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        // These docs use an open ended version so that our plugin
+        // can be updated quickly in response to Android tooling updates
+
+        // We recommend changing it to the latest version from our changelog:
+        // https://docs.fabric.io/android/changelog.html#fabric-gradle-plugin
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'io.fabric'
+apply plugin: AspectjPlugin
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+def versionMajor = 2
+def versionMinor = 2
+def versionPatch = 0
+
+def baseVersionCode = versionMajor * 100 + versionMinor * 10 + versionPatch
+def baseVersionName = versionMajor + '.' + versionMinor + '.' + versionPatch
+
+def port = 80
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    defaultConfig {
+        applicationId "com.wingjay.android.jianshi"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode baseVersionCode
+        versionName "${baseVersionName}"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true // enable proguard
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"http://jianshi.wingjay.com/"'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+//            signingConfig signingConfigs.debug
+            // Replace BASE_URL below with your self server url.
+//      buildConfigField "String", "BASE_URL", '"http://localhost:80"'
+            buildConfigField "String", "BASE_URL", '"http://jianshi.wingjay.com/"'
+//      buildConfigField "String", "BASE_URL", '"http://' + getLocalIp("en0") + ':' + port + '/"'
+//            applicationIdSuffix '.debug'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file('jianshi_dev.jks')
+//            storePassword 'jianshi'
+//            keyAlias 'jianshidev'
+//            keyPassword 'jianshi'
+//        }
+//    }
+}
+
+def supportLibVersion = '25.0.0'
+def dbflow_version = "3.1.1"
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile 'joda-time:joda-time:2.3'
+    compile 'com.jakewharton:butterknife:6.0.0'
+    compile 'com.facebook.stetho:stetho:1.2.0'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true;
+    }
+    // com.example.aspectj.apt command comes from the android-com.example.aspectj.apt plugin
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.5'
+    compile 'com.google.dagger:dagger:2.5'
+    provided 'javax.annotation:jsr250-api:1.0'
+    //suqare
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.facebook.stetho:stetho:1.3.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    compile 'io.reactivex:rxjava:1.1.6'
+    //DBFlow
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+    compile 'com.jakewharton.timber:timber:4.3.1'
+
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    //font
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+
+    //
+    compile 'org.aspectj:aspectjrt:1.8.9'
+
+    compile project(':lib')
+    annotationProcessor project(':apt')
+}
+
+// Get the ip address by interface name
+def getLocalIp(String interfaceName) {
+    NetworkInterface iface = NetworkInterface.getByName(interfaceName);
+    for (InterfaceAddress address : iface.getInterfaceAddresses()) {
+        String ip = address.getAddress().getHostAddress()
+        if (ip.length() <= 15) {
+            return ip;
+        }
+    }
+}

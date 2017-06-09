@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by wingjay on 11/16/16 3:31 PM
+  ~ Copyright (c) 2016.  All rights reserved.
+  ~
+  ~ Last modified 11/10/16 11:05 AM
+  ~
+  ~ Reach me: https://github.com/wingjay
+  ~ Email: yinjiesh@126.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="@dimen/margin_16"
+    >
+
+    <com.wingjay.jianshi.ui.widget.TextPointView
+        android:id="@+id/bg_color_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:text="色"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/bg_color_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_18"
+        android:layout_marginStart="@dimen/margin_18"
+        android:gravity="start|center"
+        style="@style/TextStyle"
+        />
+
+</LinearLayout>
